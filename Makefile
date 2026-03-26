@@ -2,7 +2,7 @@ NAME = libpushswap.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
-SRC = swap.c push.c rotate.c reverse_rotate.c
+SRC = swap.c push.c rotate.c reverse_rotate.c ft_string_arg.c
 OBJ = $(SRC:.c=.o)
 
 LIBFTPRINTF = ft_printf/libftprintf.a

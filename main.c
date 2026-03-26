@@ -26,15 +26,29 @@ void	print_pile(const char *name, int *pile, int size)
 	printf("\n");
 }
 
+static void	ft_free_inttab(int *tab, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	if (tab == NULL)
+		return ;
+	while (i < len && tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
 int	main(int argc, char *argv[])
 {
-	char	*argstr;
+	int	*pile_a;
+	int size_a;
 
 	if (argc == 2)
-		argstr = argv[1];
-	int pile_a[5] = {3, 1, 2, 4, 5};
-	int size_a = 5;
-
+		size_a = ft_str_to_int_tab(argv[1], &pile_a);
+	
 	int pile_b[5] = {9, 8, 6, 7, 10};
 	int size_b = 5;
 
@@ -47,6 +61,7 @@ int	main(int argc, char *argv[])
 
 	print_pile("pile a", pile_a, size_a);
 	print_pile("pile b", pile_b, size_b);
+	ft_free_inttab(pile_a, size_a);
 
 	return 0;
 }
