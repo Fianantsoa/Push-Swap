@@ -6,14 +6,13 @@
 /*   By: finoment <finoment@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 08:04:08 by finoment          #+#    #+#             */
-/*   Updated: 2026/03/17 17:10:43 by finoment         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:48:58 by finoment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
 # include <stdarg.h>
 # include "libft/libft.h"
 
