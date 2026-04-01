@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   ft_string_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: finoment <finoment@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 14:04:51 by finoment          #+#    #+#             */
-/*   Updated: 2026/03/26 15:04:10 by finoment         ###   ########.fr       */
+/*   Updated: 2026/04/01 14:32:11 by finoment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	ft_str_to_int_tab(const char *str, int **pile_a)
 		return (0);
 	*pile_a = ft_to_tab_int(tab_str, size);
 	free(tab_str);
-	if (!pile_a)
+	if (!*pile_a)
 		return (0);
 	return (size);
 }

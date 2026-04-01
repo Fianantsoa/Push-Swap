@@ -6,7 +6,7 @@
 /*   By: finoment <finoment@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 08:43:44 by finoment          #+#    #+#             */
-/*   Updated: 2026/03/25 18:27:19 by finoment         ###   ########.fr       */
+/*   Updated: 2026/04/01 15:07:12 by finoment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,25 @@ static void	ft_insert_at_head(int *dst, int *size_dst, int value)
 	(*size_dst)++;
 }
 
-void	push(int *src, int *size_src, int *dst, int *size_dst, const char *name)
+void	pa(int *pile_b, int *size_b, int *pile_a, int *size_a)
 {
 	int	first_to_push;
 
-	if (*size_src == 0)
+	if (*size_b == 0)
 		return ;
-	first_to_push = src[0];
-	ft_insert_at_head(dst, size_dst, first_to_push);
-	ft_remove_first(src, size_src);
-	ft_printf("%s\n", name);
+	first_to_push = pile_b[0];
+	ft_insert_at_head(pile_a, size_a, first_to_push);
+	ft_remove_first(pile_b, size_b);
+	ft_printf("pb\n");
+}
+
+void	pb(int *pile_a, int *size_a, int *pile_b, int *size_b)
+{
+	int	first_to_push;
+
+	if (*size_a == 0)
+		return ;
+	first_to_push = pile_a[0];
+	ft_insert_at_head(pile_b, size_b, first_to_push);
+	ft_remove_first(pile_a, size_a);
 }
