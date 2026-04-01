@@ -7,9 +7,8 @@ char *ft_argv_str(char *argv[], int size)
     char    *temp;
 
     i = 0;
-    arg_to_str = (char *) malloc(sizeof(char) * ((size * 2) - 1));
-    arg_to_str = "";
-    while (++i < size + 1)
+    arg_to_str = ft_strdup("");
+    while (argv[++i] && i < size + 1)
     {
         temp = arg_to_str;
         arg_to_str = ft_strjoin(temp, argv[i]);

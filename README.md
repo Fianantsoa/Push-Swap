@@ -36,8 +36,8 @@ In summary, `push_swap` is a fundamental C algorithmic project that develops you
 First, clone the repository:
 
 ```bash
-git clone git@vogsphere.42antananarivo.mg:vogsphere/intra-uuid-xxxx GNL
-cd GNL
+git clone git@vogsphere.42antananarivo.mg:vogsphere/intra-uuid-xxxx push_swap
+cd push_swap
 ```
 
 > Note: The repository URL may change depending on the project or user.
@@ -48,13 +48,23 @@ git clone <repository_url> <folder_name>
 cd <folder_name>
 ```
 
+---
+
 ### Usage
 
-Compile your project:
+Compile your project using the Makefile:
 
 ```bash
-cc -Wall -Wextra -Werror push_swap.c stack_utils.c sort_algorithms.c -o push_swap
+make
 ```
+
+This will generate the executable:
+
+```bash
+./push_swap
+```
+
+---
 
 Run your program with a list of integers:
 
@@ -72,7 +82,17 @@ pa
 pa
 ```
 
-> Each line represents an operation to sort the stack with the minimal moves.
+> Each line represents an operation used to sort the stack with the minimal number of moves.
+
+---
+
+### Additional commands
+
+```bash
+make clean      # Remove object files
+make fclean     # Remove object files and executable
+make re         # Recompile the project
+```
 
 ---
 

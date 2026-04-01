@@ -1,8 +1,8 @@
-NAME = libpushswap.a
+NAME = push_swap
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
-SRC = swap.c push.c rotate.c reverse_rotate.c ft_string_arg.c ft_args_pile.c
+SRC = main.c swap.c push.c rotate.c reverse_rotate.c ft_string_arg.c ft_args_pile.c
 OBJ = $(SRC:.c=.o)
 
 LIBFTPRINTF = ft_printf/libftprintf.a
@@ -13,8 +13,7 @@ $(LIBFTPRINTF):
 	make -C ft_printf
 
 $(NAME): $(OBJ) $(LIBFTPRINTF)
-	cp $(LIBFTPRINTF) $(NAME)
-	ar rcs $(NAME) $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) $(LIBFTPRINTF) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@

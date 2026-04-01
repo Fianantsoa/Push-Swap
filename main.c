@@ -6,7 +6,7 @@
 /*   By: finoment <finoment@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 08:32:30 by finoment          #+#    #+#             */
-/*   Updated: 2026/03/25 18:21:50 by finoment         ###   ########.fr       */
+/*   Updated: 2026/04/01 12:05:49 by finoment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	ft_is_sorted(int *pile, int size)
 	i = 0;
 	while (pile[i] < pile[i + 1] && pile[i + 1])
 		i++;
-	printf("%d %d\n", size, i);
+	if (!pile[i + 1])
+		i++;
 	if (size == i)
 		return (1);
 	return (0);
@@ -44,12 +45,13 @@ int	main(int argc, char *argv[])
 {
 	int		*pile_a;
 	int 	size_a;
-	char	*str;
 	int 	size_a_origin;
+	char	*str;
 
 	pile_a = NULL;
-	printf("Number arguments : %d\n", argc);
 	size_a = argc - 1;
+	if (size_a == 0)
+		return (0);
 	if (size_a > 1)
 	{
 		str = ft_argv_str(argv, size_a);
@@ -58,11 +60,11 @@ int	main(int argc, char *argv[])
 	}
 	if (size_a == 1)
 		size_a = ft_str_to_int_tab(argv[1], &pile_a);
-	// size_a_origin = size_a;
-	// if(ft_is_sorted(pile_a, size_a_origin))
-	// 	printf("Sorted\n");
-	// else
-	// 	printf("Not sorted\n");
+	size_a_origin = size_a;
+	if(ft_is_sorted(pile_a, size_a_origin))
+		printf("Sorted\n");
+	else
+		printf("Not sorted\n");
 
 	int pile_b[5] = {9, 8, 6};
 	int size_b = 3;
