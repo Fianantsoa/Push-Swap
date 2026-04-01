@@ -21,3 +21,4 @@ void	reverse_rotate(int *pile, int size, const char *name);
 void	rrr(int *pile_a, int size_a, int *pile_b, int size_b);
 int     ft_str_to_int_tab(const char *str, int **pile_a);
 int     *ft_to_tab_int(char **tab_str, int size);
+char    *ft_argv_str(char *argv[], int size);
